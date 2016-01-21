@@ -3,5 +3,5 @@
 (function(){
     "use strict";
 
-    angular.module("IntroApp", ["ngMessages", "ngRoute", "apSplatter"]);
+    angular.module("IntroApp", ["ngMaterial", "md.data.table", "ngMessages", "ngRoute", "apSplatter"]);
 })();

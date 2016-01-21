@@ -1,14 +1,17 @@
 <div class="user-cards" ng-controller="listUserCtrl as vm">
-    <h2>Filter Users by Vowel</h2>
-
-    <select ng-model="vm.vowel">
-        <option value=''></option>
-        <option value='A'>A</option>
-        <option value='E'>E</option>
-        <option value='I'>I</option>
-        <option value='O'>O</option>
-        <option value='U'>U</option>
-    </select>
+    <div layout="row">
+        <h2 layout="column">Filter Users by Vowel</h2>
+        <md-input-container layout="column" flex-offset="5">
+            <md-select ng-model="vm.vowel">
+                <md-option value=''></md-option>
+                <md-option value='A'>A</md-option>
+                <md-option value='E'>E</md-option>
+                <md-option value='I'>I</md-option>
+                <md-option value='O'>O</md-option>
+                <md-option value='U'>U</md-option>
+            </md-select>
+        </md-input-container>
+    </div>
 
     <div ng-repeat="user in (vm.users | vowelUserFilter:vm.vowel)">
         <div biz-card="user"></div>

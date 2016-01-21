@@ -6,14 +6,20 @@
     angular
         .module("IntroApp")
         .controller("navCtrl",
-        ["$location",
-        function($location) {
+        ["$scope", "$location",
+        function($scope, $location) {
             var vm = this;
-            vm.isActive = isActive;
             vm.$location = $location;   // Used to document $location on /route page.
 
+            vm.isActive = isActive;
+            vm.onSelect = onSelect;
+
             function isActive(path) {
-                return ($location.path() === path);
+                return (path === $location.path());
+            }
+
+            function onSelect(path) {
+                $location.path(path);
             }
         }]);
 })();

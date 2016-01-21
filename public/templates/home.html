@@ -1,23 +1,31 @@
 <div>
     <h2>Simple Binding Examples <span ng-show="home_name">for {{home_name}}</span></h2>
 
-    <br />
-    <label for="home-name">Name:&nbsp;</label>
-    <input type="text" id="home-name" ng-model="home_name">&nbsp;&nbsp;<input type="text" ng-model="home_name">
-
-    <br />
-    <br />
-    <br />
-    <label for="home-csl">Enter a comma, separated list:&nbsp;</label>
-    <input type="text" id="home-csl" ng-model="home_list">
-
-    <br />
-    <br />
-    <div ng-repeat="item in home_list.split(',')" ng-show="home_list">
-        <div ng-show="item.trim()">
-            <input type="checkbox">&nbsp;{{item.trim()}}
-        </div>
+    <div layout="row" flex="30">
+        <md-input-container layout="column" flex="45">
+            <label for="home-name">Name:&nbsp;</label>
+            <input type="text" id="home-name" ng-model="home_name">
+        </md-input-container>
+        <md-input-container layout="column" flex="45" flex-offset="10">
+            <input type="text" ng-model="home_name">
+        </md-input-container>
     </div>
+
+
+    <md-input-container layout="row" flex="30">
+        <label for="home-csl">Comma, separated list:&nbsp;</label>
+        <input type="text" id="home-csl" ng-model="home_list">
+    </md-input-container>
+
+    <md-list ng-show="home_list">
+        <md-list-item ng-repeat="item in home_list.split(',')">
+            <div ng-show="item.trim()">
+                <md-checkbox ></md-checkbox>
+                {{item.trim()}}
+            </div>
+        </md-list-item>
+    </md-list>
+
 
     <article ng-non-bindable>
         <h3>Two-Way Data Binding</h3>

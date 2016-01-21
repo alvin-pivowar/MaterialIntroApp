@@ -1,17 +1,22 @@
 <div ng-controller="navCtrl as vm">
-    <table>
-        <thead>
-            <th colspan="2">$location</th>
-        </thead>
-        <tbody>
-            <tr><td>absUrl</td><td>{{vm.$location.absUrl()}}</td></tr>
-            <tr><td>url</td><td>{{vm.$location.url()}}</td></tr>
-            <tr><td>protocol</td><td>{{vm.$location.protocol()}}</td></tr>
-            <tr><td>host</td><td>{{vm.$location.host()}}</td></tr>
-            <tr><td>port</td><td>{{vm.$location.port()}}</td></tr>
-            <tr><td>path</td><td>{{vm.$location.path()}}</td></tr>
-        </tbody>
-    </table>
+    <md-table-container>
+        <table md-table flex="25">
+            <thead md-head>
+                <tr md-row>
+                    <th md-column></th>
+                    <th md-column>$location</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row><td md-cell>absUrl</td><td md-cell>{{vm.$location.absUrl()}}</td></tr>
+                <tr md-row><td md-cell>url</td><td md-cell>{{vm.$location.url()}}</td></tr>
+                <tr md-row><td md-cell>protocol</td><td md-cell>{{vm.$location.protocol()}}</td></tr>
+                <tr md-row><td md-cell>host</td><td md-cell>{{vm.$location.host()}}</td></tr>
+                <tr md-row><td md-cell>port</td><td md-cell>{{vm.$location.port()}}</td></tr>
+                <tr md-row><td md-cell>path</td><td md-cell>{{vm.$location.path()}}</td></tr>
+            </tbody>
+        </table>
+    </md-table-container>
 
     <article ng-non-bindable>
         <h3>ngRoute</h3>

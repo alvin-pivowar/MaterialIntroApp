@@ -1,12 +1,29 @@
 <div class="crud-view" ng-controller="userCRUD_viewCtrl as vm">
     <h2>View User</h2>
-    <form>
-        <label>First Name:</label><span>{{vm.user.firstName}}</span>&nbsp;&nbsp;
-        <label>Last Name:</label><span>{{vm.user.lastName}}</span><br />
-        <label>Email:</label><a href="mailto:{{vm.user.email}}">{{vm.user.email}}</a><br /><br />
-        <label>ID:</label><code>{{vm.user.uuid}}</code>
-    </form>
-    <button ng-click="vm.Close()">Close</button>
+
+    <div layout="row" flex="50">
+        <label layout="column" flex="20">First Name:</label>
+        <span layout="column">{{vm.user.firstName}}</span>
+    </div>
+
+    <div layout="row" flex="50">
+        <label layout="column" flex="20">Last Name:</label>
+        <span layout="column">{{vm.user.lastName}}</span>
+    </div>
+
+    <div layout="row" flex="50">
+        <label layout="column" flex="20">Email:</label>
+        <a layout="column" href="mailto:{{vm.user.email}}">{{vm.user.email}}</a>
+    </div>
+
+    <div layout="row" flex="50">
+        <label layout="column" flex="20">ID:</label>
+        <code layout="column">{{vm.user.uuid}}</code>
+    </div>
+
+    <div layout="row" flex-offset="20">
+        <md-button class="md-raised" ng-click="vm.Close()">Close</md-button>
+    </div>
 
     <article ng-non-bindable>
         <h3>Moving Parts</h3>

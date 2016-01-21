@@ -3,6 +3,10 @@
   <head>
       <title><%= title %></title>
       <script src="/lib/angular/angular.js"></script>
+      <script src="/lib/angular-animate/angular-animate.js"></script>
+      <script src="/lib/angular-aria/angular-aria.js"></script>
+      <script src="/lib/angular-material/angular-material.js"></script>
+      <script src="/lib/angular-material-data-table/dist/md-data-table.js"></script>
       <script src="/lib/angular-messages/angular-messages.js"></script>
       <script src="/lib/angular-route/angular-route.js"></script>
       <script src="/lib/apSplatter/apSplatter.js"></script>
@@ -23,25 +27,32 @@
       <script src="/scripts/user/crud/userCRUD_formCtrl.js"></script>
       <script src="/scripts/user/crud/userCRUD_viewCtrl.js"></script>
 
+      <link rel="stylesheet" href="/lib/angular-material/angular-material.css">
+      <link rel="stylesheet" href="/lib/angular-material-data-table/dist/md-data-table.css">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
 
   <body ng-app="IntroApp">
   <header>
-      <center class="title">
-          <span>Introduction to</span>
-          <img src="/images/AngularJS_logo.svg.png">
-      </center>
-      <div ng-include="'/templates/nav.html'"></div>
-      <div class="author">
-          <div>Alvin Pivowar</div>
-          <a href="http://www.ng-al.com">www.ng-al.com</a><br />
-          <a href="mailto:alvin@ng-al.com">alvin@ng-al.com</a>
-          <div>Jan. 2016</div>
+      <div layout="row">
+          <div layout="column" layout-align="center" flex="75" flex-offset="5">
+              <div layout="row">
+                <label layout="column" layout-align="center" flex="25">Introduction to</label>
+                <img layout="column" layout-align="center" flex="75" src="/images/AngularJS_logo.svg.png">
+              </div>
+          </div>
+
+          <div layout="column" layout-align="end" flex="15">
+              <div layout="row" layout-align="end">Alvin Pivowar</div>
+              <a layout="row" layout-align="end" href="http://www.ng-al.com">www.ng-al.com</a><br />
+              <a layout="row" layout-align="end" href="mailto:alvin@ng-al.com">alvin@ng-al.com</a>
+              <div layout="row" layout-align="end">Jan. 2016</div>
+          </div>
       </div>
+      <div ng-include="'/templates/nav.html'"></div>
   </header>
 
-    <hr>
     <div class="view" ng-view></div>
   </body>
 </html>

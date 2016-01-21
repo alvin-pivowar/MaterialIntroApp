@@ -1,14 +1,28 @@
 <div class="crud-list">
-    <h2>List of Users</h2>
+    <div layout="row">
+        <h2 layout="column">List of Users</h2>
+        <div layout="column" layout-align="center" flex-offset="25">
+            <md-button class="md-raised" title="Add User" ng-click="vm.showCreate()">
+                <md-icon md-font-library="material-icons">add person</md-icon>
+            </md-button>
+        </div>
+    </div>
 
-    <button class="create-button" ng-click="vm.showCreate()">Create New User</button>
-
-    <div class="list" ng-repeat="user in vm.users">
-        <span>{{user.lastName}}, {{user.firstName}}</span>
-        <button ng-click="vm.showView(user.uuid)">View</button>
-        <button ng-click="vm.showEdit(user.uuid)">Edit</button>
-        <button ng-click="vm.showDelete(user.uuid)">Delete</button>
-        <hr>
+    <div layout="row" ng-repeat="user in vm.users">
+        <span layout="column" layout-align="center" flex="15">{{user.lastName}}, {{user.firstName}}</span>
+        <div layout="column">
+            <div layout="row">
+                <md-button class="md-raised" title="View User" ng-click="vm.showView(user.uuid)">
+                    <md-icon md-font-library="material-icons">info_outline person</md-icon>
+                </md-button>
+                <md-button class="md-raised" title="Update User" ng-click="vm.showEdit(user.uuid)">
+                    <md-icon md-font-library="material-icons">create person</md-icon>
+                </md-button>
+                <md-button class="md-raised" title="Delete User" ng-click="vm.showDelete(user.uuid)">
+                    <md-icon md-font-library="material-icons">clear person</md-icon>
+                </md-button>
+            </div>
+        </div>
     </div>
 
     <article ng-non-bindable>

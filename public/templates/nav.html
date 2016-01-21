@@ -1,9 +1,11 @@
-<div>
-    <div class="nav" ng-controller="navCtrl as vm">
-        <a ng-class='{active: vm.isActive("/home")}' href="#home">Binding</a>
-        <a ng-class='{active: vm.isActive("/list")}' href="#list">User List</a>
-        <a ng-class='{active: vm.isActive("/crud")}' href="#crud">User CRUD</a>
-        <a ng-class='{active: vm.isActive("/cards")}' href="#cards">User Cards</a>
-        <a ng-class='{active: vm.isActive("/route")}' href="#route">Routing</a>
-    </div>
+<div class="nav" ng-controller="navCtrl as vm">
+    <md-divider></md-divider>
+    <md-tabs>
+        <md-tab label="Binding" md-active='vm.isActive("/home")' md-on-select='vm.onSelect("/home")'></md-tab>
+        <md-tab label="User List" md-active='vm.isActive("/list")' md-on-select='vm.onSelect("/list")'></md-tab>
+        <md-tab label="User CRUD" md-active='vm.isActive("/crud")' md-on-select='vm.onSelect("/crud")'></md-tab>
+        <md-tab label="User Cards" md-active='vm.isActive("/cards")' md-on-select='vm.onSelect("/cards")'></md-tab>
+        <md-tab label="Routing" md-active='vm.isActive("/route")' md-on-select='vm.onSelect("/route")'></md-tab>
+        <md-tab></md-tab>
+    </md-tabs>
 </div>

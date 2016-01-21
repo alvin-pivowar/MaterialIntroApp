@@ -1,23 +1,26 @@
 <div ng-controller="listUserCtrl as vm">
     <h2>All Users</h2>
 
-    <br />
-    <table>
-        <thead>
-            <th>uuid</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-        </thead>
-        <tbody>
-        <tr ng-repeat="user in vm.users">
-            <td>{{user.uuid}}</td>
-            <td>{{user.firstName}}</td>
-            <td>{{user.lastName}}</td>
-            <td>{{user.email}}</td>
-        </tr>
-        </tbody>
-    </table>
+    <md-table-container>
+        <table md-table flex="50">
+            <thead md-head>
+                <tr md-row>
+                    <th md-column>uuid</th>
+                    <th md-column>First Name</th>
+                    <th md-column>Last Name</th>
+                    <th md-column>Email</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr ng-repeat="user in vm.users">
+                    <td md-cell>{{user.uuid}}</td>
+                    <td md-cell>{{user.firstName}}</td>
+                    <td md-cell>{{user.lastName}}</td>
+                    <td md-cell>{{user.email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </md-table-container>
 
     <article ng-non-bindable>
         <h3>Moving Parts</h3>

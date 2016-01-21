@@ -1,10 +1,17 @@
 <div class="crud-delete" ng-controller="userCRUD_deleteCtrl as vm">
     <h2>Delete this User?</h2>
 
-    <div biz-card="vm.user"></div>
-
-    <button ng-click="vm.Yes()">Yes</button>
-    <button ng-click="vm.No()">No</button>
+    <div layout="row">
+        <div layout="column" biz-card="vm.user"></div>
+        <div layout="column" layout-align="center">
+            <div layout="row">
+                <md-button layout="column" class="md-raised md-warn" title="Delete User" ng-click="vm.Yes()">
+                    <md-icon md-font-library="material-icons">clear</md-icon>
+                </md-button>
+                <md-button layout="column" class="md-raised" ng-click="vm.No()">Cancel</md-button>
+            </div>
+        </div>
+    </div>
 
     <article ng-non-bindable>
         <h3>Moving Parts</h3>
