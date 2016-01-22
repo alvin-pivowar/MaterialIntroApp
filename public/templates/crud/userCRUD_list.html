@@ -8,9 +8,9 @@
         </div>
     </div>
 
-    <div layout="row" ng-repeat="user in vm.users">
+    <div class="user-item" layout="row" flex="40" ng-repeat="user in vm.users">
         <span layout="column" layout-align="center" flex="15">{{user.lastName}}, {{user.firstName}}</span>
-        <div layout="column">
+        <div layout="column" flex-offset="25">
             <div layout="row">
                 <md-button class="md-raised" title="View User" ng-click="vm.showView(user.uuid)">
                     <md-icon>info_outline person</md-icon>
