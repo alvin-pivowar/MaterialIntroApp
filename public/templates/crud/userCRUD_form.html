@@ -36,7 +36,7 @@
 
         <div layout="row" flex-offset="25">
             <md-button class="md-raised md-primary" type="submit" title='{{ vm.user.uuid ? "Update User" : "Add User"}}'>
-                <md-icon md-font-library="material-icons">{{ vm.user.uuid ? "create" : "add"}}</md-icon>
+                <md-icon>{{ vm.user.uuid ? "create" : "add"}}</md-icon>
             </md-button>
             <md-button class="md-raised" ng-click="vm.Cancel()">Cancel</md-button>
         </div>
